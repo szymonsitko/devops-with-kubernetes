@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pong-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pongapp
+  template:
+    metadata:
+      labels:
+        app: pongapp
+    spec:
+      containers:
+        - name: pongapp
+          image: szymonsitko/pong-app:latest
